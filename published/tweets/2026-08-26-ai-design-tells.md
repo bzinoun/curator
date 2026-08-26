@@ -6,7 +6,7 @@ status: published
 date: 2026-08-26
 nuggets:
   - 2026-08-26-ai-design-tells-involuntary-pattern-signatures.md
-visual: "brief: image 16:9, une card UI générique avec trois callouts flèchés : 'gradient text', 'colored bar above heading', 'decorative side border' — chacun tagué d'un petit label 'tell'. Fond clair, palette Majorelle/saffron, ton ironique mais propre."
+visual: "assets/images/2026-08-26-ai-design-tells.png — brief: image 16:9, une card UI générique avec trois callouts flèchés : 'gradient text', 'colored bar above heading', 'decorative side border' — chacun tagué d'un petit label 'tell'. Fond clair, palette Majorelle/saffron, ton ironique mais propre."
 link: ""
 ---
 Gradient text. A colored bar above every heading. A decorative border down the side of each card.

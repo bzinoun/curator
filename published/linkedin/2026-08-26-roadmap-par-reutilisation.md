@@ -6,7 +6,7 @@ status: published
 date: 2026-08-26
 nuggets:
   - 2026-08-26-roadmap-ordered-by-reusability-not-scope.md
-visual: "brief: image 1200x627, schéma minimaliste — un bloc central 'MOTEUR' (lire docs → identifier parties → responsabilité → barème) avec trois flèches sortantes numérotées 1-2-3 vers 'renforcer', 'étendre', 'nouvelle branche'. Palette Majorelle/saffron, texte incrusté : 'Trier par levier, pas par marché'. Style flat, sans pictos génériques."
+visual: "assets/images/2026-08-26-roadmap-par-reutilisation.png — brief: image 1200x627, schéma minimaliste — un bloc central 'MOTEUR' (lire docs → identifier parties → responsabilité → barème) avec trois flèches sortantes numérotées 1-2-3 vers 'renforcer', 'étendre', 'nouvelle branche'. Palette Majorelle/saffron, texte incrusté : 'Trier par levier, pas par marché'. Style flat, sans pictos génériques."
 link: ""
 ---
 La roadmap la plus convaincante que j'ai vue cette année n'était triée ni par taille de marché, ni par effort. Elle était triée par ce que chaque brique réutilise.

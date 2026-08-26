@@ -7,7 +7,7 @@ date: 2026-08-26
 nuggets:
   - 2026-08-26-search-query-neutralizing-indexes.md
   - 2026-08-26-index-discovery-by-measurement.md
-visual: "brief: image 1200x627, fond sombre (Majorelle), deux barres horizontales côte à côte — 'coût 162' longue en rouge vs 'coût 28' courte en saffron — avec la légende 'même table, même index, requête différente'. Style flat, typographie grasse, pas d'icône DB cliché."
+visual: "assets/images/2026-08-26-index-qui-ne-sert-a-rien.png — brief: image 1200x627, fond sombre (Majorelle), deux barres horizontales côte à côte — 'coût 162' longue en rouge vs 'coût 28' courte en saffron — avec la légende 'même table, même index, requête différente'. Style flat, typographie grasse, pas d'icône DB cliché."
 link: ""
 ---
 Un index qu'on ne mesure pas est un index qu'on suppose. Et une supposition, ça ne filtre pas 100 000 lignes.
