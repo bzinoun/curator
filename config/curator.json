@@ -1,5 +1,5 @@
 {
-  "claude_bin": "/Users/badrzinoun/.local/bin/claude",
+  "claude_bin": "/Users/zakariabelarrem/.local/bin/claude",
   "extract_model": "claude-haiku-4-5",
   "min_transcript_bytes": 20000,
   "max_convo_chars": 120000,
