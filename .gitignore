@@ -1,0 +1,8 @@
+site/node_modules/
+site/dist/
+site/.astro/
+data/logs/
+data/tmp/
+data/.harvest.lock
+.DS_Store
+data/queue/*.jsonl

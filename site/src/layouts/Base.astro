@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+}
+const { title, description = 'Notes de terrain — architecture, code, outillage', lang = 'fr' } = Astro.props;
+const dir = lang === 'ary' ? 'rtl' : 'ltr';
+const base = import.meta.env.BASE_URL;
+---
+<html lang={lang === 'ary' ? 'ar' : lang} dir={dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <style>
+      :root {
+        --bg: #ffffff; --fg: #1a1d21; --muted: #6b7280;
+        --accent: #0f6b4f; --border: #e5e7eb; --code-bg: #f6f8fa;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14171a; --fg: #e6e8ea; --muted: #9aa2ab;
+          --accent: #4fc596; --border: #2a2f35; --code-bg: #1e2227;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; background: var(--bg); color: var(--fg);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif;
+        line-height: 1.65;
+      }
+      main { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+      header.site {
+        border-bottom: 1px solid var(--border); padding: 1rem 1.25rem;
+        display: flex; justify-content: space-between; align-items: baseline;
+        max-width: 46rem; margin: 0 auto;
+      }
+      header.site a { color: var(--fg); text-decoration: none; font-weight: 700; }
+      header.site .tag { color: var(--muted); font-size: .85rem; }
+      a { color: var(--accent); }
+      h1, h2, h3 { line-height: 1.25; }
+      :global(pre) { padding: 1rem; border-radius: 8px; overflow-x: auto; }
+      :global(code) { font-size: .92em; }
+      :global(:not(pre) > code) { background: var(--code-bg); padding: .15em .35em; border-radius: 4px; }
+      :global(table) { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+      :global(th), :global(td) { border: 1px solid var(--border); padding: .5rem .7rem; text-align: start; }
+      :global(img), :global(svg) { max-width: 100%; }
+      :global(.mermaid) { background: transparent; text-align: center; }
+      footer { color: var(--muted); font-size: .85rem; border-top: 1px solid var(--border);
+        max-width: 46rem; margin: 0 auto; padding: 1rem 1.25rem; }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <a href={base}>curator</a>
+      <span class="tag">notes de terrain · fr / en / دارجة</span>
+    </header>
+    <main><slot /></main>
+    <footer>Écrit à partir de sessions de travail réelles, distillées et anonymisées.</footer>
+  </body>
+</html>

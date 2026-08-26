@@ -1,0 +1,28 @@
+{
+  "replacements": {
+    "insure-tech": "un produit insurtech",
+    "insuretech-death": "un module insurtech",
+    "Maltem": "une ESN",
+    "maltem": "une ESN",
+    "Valkima": "un cabinet de conseil",
+    "valkima": "un cabinet de conseil",
+    "Hirlya": "une startup",
+    "hirlya": "une startup",
+    "Athenia": "un projet SaaS",
+    "badrzinoun": "l'auteur",
+    "bzinoun": "l'auteur",
+    "zinoun.badr@gmail.com": "[email]",
+    "bezinoun@maltem.com": "[email]"
+  },
+  "forbidden_patterns": [
+    "sk-[A-Za-z0-9_-]{20,}",
+    "gho_[A-Za-z0-9]{20,}",
+    "ghp_[A-Za-z0-9]{20,}",
+    "AKIA[A-Z0-9]{16}",
+    "-----BEGIN [A-Z ]*PRIVATE KEY-----",
+    "Bearer [A-Za-z0-9._-]{20,}",
+    "password\\s*[:=]\\s*\\S+",
+    "/Users/[A-Za-z0-9._-]+/[^\\s)\"']*",
+    "[A-Za-z0-9._%+-]+@(maltem|valkima)\\.[a-z]{2,}"
+  ]
+}
