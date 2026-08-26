@@ -2,7 +2,7 @@
 title: "Vos index existent. Ils ne servent à rien."
 format: linkedin
 lang: fr
-status: draft
+status: published
 date: 2026-08-26
 nuggets:
   - 2026-08-26-search-query-neutralizing-indexes.md

@@ -2,7 +2,7 @@
 title: "AI design tells"
 format: tweet
 lang: en
-status: draft
+status: published
 date: 2026-08-26
 nuggets:
   - 2026-08-26-ai-design-tells-involuntary-pattern-signatures.md

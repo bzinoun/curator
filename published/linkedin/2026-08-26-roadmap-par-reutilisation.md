@@ -2,7 +2,7 @@
 title: "Une roadmap se trie par réutilisation, pas par taille de marché"
 format: linkedin
 lang: fr
-status: draft
+status: published
 date: 2026-08-26
 nuggets:
   - 2026-08-26-roadmap-ordered-by-reusability-not-scope.md

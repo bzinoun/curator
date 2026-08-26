@@ -1,17 +1,10 @@
 ---
 title: "The 35B Model That Outran the 27B: Why Bigger Was Faster on My Mac"
-format: article
-lang: en
-status: published
-date: 2026-08-26
-nuggets:
-  - 2026-08-26-llm-speed-bandwidth-formula.md
-  - 2026-08-26-moe-paradox-larger-model-faster.md
-  - 2026-08-26-mac-unified-memory-gpu-ceiling.md
-visual: "mermaid inline + tables"
-link: ""
 description: "Benchmarking open-weight LLMs on an M1 Pro taught me that inference speed is a bandwidth problem, that active parameters matter more than total ones, and that the 32 GB on the box is a lie."
+lang: en
+date: 2026-08-26
 tags: [local-inference, apple-silicon, moe, llm-performance]
+draft: false
 ---
 
 I downloaded a 27B model and got 5 tokens per second. Then I downloaded a 35B model and got 42.
