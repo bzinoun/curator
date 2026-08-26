@@ -54,9 +54,13 @@ def extract_convo(transcript, max_chars):
 
 def mine(cfg, convo, project, aliases):
     prompt = open(os.path.join(REPO, "prompts", "extract.md"), encoding="utf-8").read()
-    prompt = prompt.replace("{PROJECT}", project).replace("{ALIASES}", json.dumps(aliases, ensure_ascii=False))
-    r = run([cfg["claude_bin"], "-p", prompt, "--model", cfg["extract_model"],
-             "--allowedTools", ""], input=convo, timeout=600)
+    prompt = (prompt.replace("{PROJECT}", project)
+              .replace("{ALIASES}", json.dumps(aliases, ensure_ascii=False))
+              .replace("{TRANSCRIPT}", convo))
+    # the whole prompt goes through stdin: a huge transcript passed separately
+    # from the instruction makes the model continue the conversation instead
+    r = run([cfg["claude_bin"], "-p", "--model", cfg["extract_model"],
+             "--allowedTools", ""], input=prompt, timeout=600)
     if r.returncode != 0:
         print(f"  claude failed: {r.stderr[:300]}")
         return None
