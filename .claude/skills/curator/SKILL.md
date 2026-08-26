@@ -19,6 +19,10 @@ extraits) → `drafts/` (contenu rédigé) → `published/` + `site/src/content/
 - `/curator harvest` — lance `python3 bin/harvest.py` puis résume ce qui a été extrait.
 - `/curator curate` — le cœur : cluster + route + rédige (workflow ci-dessous).
 - `/curator publish <draft>` — publie un draft validé (workflow Publication).
+- `/curator import-chats <export.zip|conversations.json>` — importe les conversations
+  claude.ai (via `bin/import_chats.py` ; l'export se demande dans claude.ai →
+  Settings → Privacy → Export data, lien reçu par email). Les conversations
+  substantielles rejoignent la queue et suivent le pipeline normal.
 - `/curator review` — traite `knowledge/nuggets/_review/` (nuggets à confidentialité douteuse) : corriger et sortir de _review, ou supprimer.
 
 ## Workflow curate

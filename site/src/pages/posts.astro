@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const posts = (await getCollection('posts', ({ data }) => data.status === 'published'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const rendered = await Promise.all(posts.map(async (p) => ({ p, Content: (await render(p)).Content })));
+const badge = { linkedin: 'LinkedIn', tweet: 'Tweet' };
+const langLabel = { fr: 'FR', en: 'EN', ary: 'دارجة' };
+---
+<Base title="curator — posts">
+  <h1>Posts</h1>
+  <p style="color:var(--muted);">Posts LinkedIn et tweets produits par le pipeline — tels que publiés sur les réseaux.</p>
+  {rendered.length === 0 && <p>Aucun post publié pour l'instant.</p>}
+  {rendered.map(({ p, Content }) => (
+    <article
+      dir={p.data.lang === 'ary' ? 'rtl' : 'ltr'}
+      style="border:1px solid var(--border); border-radius:10px; padding:1rem 1.25rem; margin-bottom:1.25rem;"
+    >
+      <div dir="ltr" style="display:flex; gap:.6rem; align-items:baseline; font-size:.8rem; color:var(--muted); margin-bottom:.4rem;">
+        <span style="border:1px solid var(--border); border-radius:99px; padding:.05rem .6rem; font-weight:600;">
+          {badge[p.data.format]}
+        </span>
+        <span>{langLabel[p.data.lang]}</span>
+        <span>{p.data.date.toISOString().slice(0, 10)}</span>
+      </div>
+      <Content />
+    </article>
+  ))}
+</Base>

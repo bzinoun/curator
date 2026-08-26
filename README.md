@@ -31,6 +31,7 @@ cd site && npm install      # site Astro
 | Commande | Effet |
 |---|---|
 | `bin/harvest.py` | Draine la queue → nuggets (aussi lancé par le LaunchAgent) |
+| `bin/import_chats.py <export>` | Importe les chats claude.ai (export Settings → Privacy) dans la queue |
 | `bin/curate.sh` ou `/curator curate` | Cluster + routage + rédaction des drafts |
 | `/curator publish <draft>` | Publie (article → site, post → published/) |
 | `/curator review` | Traite les nuggets à confidentialité douteuse |

@@ -24,6 +24,13 @@ def block_text(content):
 def main():
     path = sys.argv[1]
     max_chars = int(sys.argv[2]) if len(sys.argv) > 2 else 120000
+    if path.endswith(".txt"):
+        # pre-formatted import (claude.ai chat export) — pass through, cap only
+        convo = open(path, encoding="utf-8", errors="replace").read()
+        if len(convo) > max_chars:
+            convo = convo[: int(max_chars * 0.3)] + "\n\n[... transcript tronqué ...]\n\n" + convo[-int(max_chars * 0.7):]
+        sys.stdout.write(convo)
+        return
     out = []
     with open(path, encoding="utf-8", errors="replace") as f:
         for line in f:

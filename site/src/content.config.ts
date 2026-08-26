@@ -13,4 +13,18 @@ const articles = defineCollection({
   }),
 });
 
-export const collections = { articles };
+const posts = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: '../published' }),
+  schema: z.object({
+    title: z.string(),
+    format: z.enum(['linkedin', 'tweet']),
+    lang: z.enum(['fr', 'en', 'ary']),
+    status: z.string(),
+    date: z.coerce.date(),
+    link: z.string().optional(),
+    visual: z.string().optional(),
+    nuggets: z.array(z.string()).default([]),
+  }),
+});
+
+export const collections = { articles, posts };
