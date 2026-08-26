@@ -14,53 +14,109 @@ const base = import.meta.env.BASE_URL;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet" />
+    <style is:global>
       :root {
-        --bg: #ffffff; --fg: #1a1d21; --muted: #6b7280;
-        --accent: #0f6b4f; --border: #e5e7eb; --code-bg: #f6f8fa;
+        --paper: #fdfdfb;
+        --ink: #1c1e26;
+        --muted: #6f7480;
+        --majorelle: #5a4fcf;
+        --saffron: #b4650f;
+        --line: #e8e8e3;
+        --code-bg: #f4f4ef;
+        --card: #ffffff;
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #14171a; --fg: #e6e8ea; --muted: #9aa2ab;
-          --accent: #4fc596; --border: #2a2f35; --code-bg: #1e2227;
+          --paper: #16171d;
+          --ink: #e8e8e6;
+          --muted: #9aa0ab;
+          --majorelle: #8d84ea;
+          --saffron: #e0954a;
+          --line: #2b2d36;
+          --code-bg: #1f2129;
+          --card: #1b1d25;
         }
       }
       * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
       body {
-        margin: 0; background: var(--bg); color: var(--fg);
+        margin: 0; background: var(--paper); color: var(--ink);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif;
-        line-height: 1.65;
+        line-height: 1.7; font-size: 1.02rem;
+        -webkit-font-smoothing: antialiased;
       }
-      main { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+      .display, h1, h2, h3 {
+        font-family: "Bricolage Grotesque", -apple-system, sans-serif;
+        line-height: 1.15; letter-spacing: -0.01em;
+      }
+      [lang="ar"] body, [dir="rtl"] .display, [dir="rtl"] h1, [dir="rtl"] h2 {
+        font-family: "Noto Naskh Arabic", serif;
+      }
+      .ary-text { font-family: "Noto Naskh Arabic", serif; }
+      main { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1.25rem 4.5rem; }
       header.site {
-        border-bottom: 1px solid var(--border); padding: 1rem 1.25rem;
+        max-width: 44rem; margin: 0 auto; padding: 1.1rem 1.25rem;
         display: flex; justify-content: space-between; align-items: baseline;
-        max-width: 46rem; margin: 0 auto;
       }
-      header.site a { color: var(--fg); text-decoration: none; font-weight: 700; }
-      header.site .tag { color: var(--muted); font-size: .85rem; }
-      a { color: var(--accent); }
-      h1, h2, h3 { line-height: 1.25; }
-      :global(pre) { padding: 1rem; border-radius: 8px; overflow-x: auto; }
-      :global(code) { font-size: .92em; }
-      :global(:not(pre) > code) { background: var(--code-bg); padding: .15em .35em; border-radius: 4px; }
-      :global(table) { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
-      :global(th), :global(td) { border: 1px solid var(--border); padding: .5rem .7rem; text-align: start; }
-      :global(img), :global(svg) { max-width: 100%; }
-      :global(.mermaid) { background: transparent; text-align: center; }
-      footer { color: var(--muted); font-size: .85rem; border-top: 1px solid var(--border);
-        max-width: 46rem; margin: 0 auto; padding: 1rem 1.25rem; }
+      .wordmark {
+        font-family: "Bricolage Grotesque", sans-serif; font-weight: 800;
+        font-size: 1.25rem; color: var(--ink); text-decoration: none;
+      }
+      .wordmark span { color: var(--majorelle); }
+      header.site nav { display: flex; gap: 1.1rem; }
+      header.site nav a {
+        color: var(--muted); text-decoration: none; font-size: .95rem;
+      }
+      header.site nav a:hover, header.site nav a[aria-current="page"] { color: var(--ink); }
+      a { color: var(--majorelle); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+      a:focus-visible, .wordmark:focus-visible {
+        outline: 2px solid var(--majorelle); outline-offset: 3px; border-radius: 2px;
+      }
+      h1 { font-size: clamp(1.7rem, 5vw, 2.3rem); font-weight: 700; }
+      .meta-mono {
+        font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        font-size: .78rem; color: var(--muted); letter-spacing: .02em;
+      }
+      .lang-chip {
+        display: inline-block; padding: 0 .45em; border: 1px solid var(--line);
+        border-radius: 99px; font-size: .95em;
+      }
+      .lang-chip.ary { color: var(--saffron); border-color: color-mix(in srgb, var(--saffron) 35%, transparent); }
+      pre { padding: 1rem 1.1rem; border-radius: 10px; overflow-x: auto; font-size: .88rem; line-height: 1.55; }
+      :not(pre) > code {
+        background: var(--code-bg); padding: .12em .35em; border-radius: 5px; font-size: .9em;
+      }
+      table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; font-size: .95rem; }
+      th, td { border: 1px solid var(--line); padding: .5rem .7rem; text-align: start; }
+      th { background: var(--code-bg); }
+      img, svg { max-width: 100%; }
+      .mermaid { background: transparent; text-align: center; margin: 1.5rem 0; }
+      blockquote { margin: 1.2rem 0; padding: .1rem 1.1rem; border-inline-start: 3px solid var(--majorelle); color: var(--muted); }
+      footer.site {
+        max-width: 44rem; margin: 0 auto; padding: 1.2rem 1.25rem 2.5rem;
+        color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line);
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .rise { animation: rise .5s ease-out both; }
+        @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+      }
     </style>
   </head>
   <body>
     <header class="site">
-      <a href={base}>curator</a>
-      <nav style="display:flex; gap:1rem;">
-        <a href={base} style="font-weight:400;">articles</a>
-        <a href={`${base}/posts/`} style="font-weight:400;">posts</a>
+      <a class="wordmark" href={base}>curator<span>·</span></a>
+      <nav>
+        <a href={base}>articles</a>
+        <a href={`${base}/posts/`}>posts</a>
       </nav>
     </header>
     <main><slot /></main>
-    <footer>Écrit à partir de sessions de travail réelles, distillées et anonymisées.</footer>
+    <footer class="site">
+      Distillé depuis de vraies sessions de travail — anonymisé, relu, versionné.
+      <a href="https://github.com/bzinoun/curator">Le pipeline est public.</a>
+    </footer>
   </body>
 </html>

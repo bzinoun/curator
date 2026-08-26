@@ -8,14 +8,19 @@ export async function getStaticPaths() {
 }
 const { article } = Astro.props;
 const { Content } = await render(article);
+const langLabel = { fr: 'fr', en: 'en', ary: 'دارجة' };
 ---
 <Base title={article.data.title} description={article.data.description} lang={article.data.lang}>
-  <article>
-    <h1>{article.data.title}</h1>
-    <p style="color:var(--muted); font-size:.9rem;">
-      {article.data.date.toISOString().slice(0, 10)}
-      {article.data.tags.map((t) => ` · ${t}`).join('')}
-    </p>
+  <article class="rise">
+    <header class="art-head">
+      <p class="meta-mono" dir="ltr">
+        {article.data.date.toISOString().slice(0, 10)}
+        &nbsp;·&nbsp;<span class={`lang-chip ${article.data.lang === 'ary' ? 'ary' : ''}`}>{langLabel[article.data.lang]}</span>
+        {article.data.tags.map((t) => <span>&nbsp;·&nbsp;{t}</span>)}
+      </p>
+      <h1>{article.data.title}</h1>
+      <p class="lede">{article.data.description}</p>
+    </header>
     <Content />
   </article>
   <script>
@@ -35,3 +40,9 @@ const { Content } = await render(article);
     }
   </script>
 </Base>
+
+<style>
+  .art-head { margin: 1rem 0 2rem; }
+  .art-head h1 { margin: .5rem 0 .7rem; }
+  .lede { color: var(--muted); font-size: 1.05rem; margin: 0; max-width: 40rem; }
+</style>

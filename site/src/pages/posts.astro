@@ -6,25 +6,37 @@ const posts = (await getCollection('posts', ({ data }) => data.status === 'publi
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const rendered = await Promise.all(posts.map(async (p) => ({ p, Content: (await render(p)).Content })));
 const badge = { linkedin: 'LinkedIn', tweet: 'Tweet' };
-const langLabel = { fr: 'FR', en: 'EN', ary: 'دارجة' };
+const langLabel = { fr: 'fr', en: 'en', ary: 'دارجة' };
 ---
 <Base title="curator — posts">
-  <h1>Posts</h1>
-  <p style="color:var(--muted);">Posts LinkedIn et tweets produits par le pipeline — tels que publiés sur les réseaux.</p>
-  {rendered.length === 0 && <p>Aucun post publié pour l'instant.</p>}
+  <section class="intro rise">
+    <h1>Posts</h1>
+    <p>
+      Les formats courts du pipeline — avis tranchés pour LinkedIn, réflexions pour
+      Twitter — tels qu'ils partent sur les réseaux. Chacun renvoie vers l'article
+      qui le porte.
+    </p>
+  </section>
+  {rendered.length === 0 && <p>Rien pour l'instant — les prochains cycles de curation arrivent.</p>}
   {rendered.map(({ p, Content }) => (
-    <article
-      dir={p.data.lang === 'ary' ? 'rtl' : 'ltr'}
-      style="border:1px solid var(--border); border-radius:10px; padding:1rem 1.25rem; margin-bottom:1.25rem;"
-    >
-      <div dir="ltr" style="display:flex; gap:.6rem; align-items:baseline; font-size:.8rem; color:var(--muted); margin-bottom:.4rem;">
-        <span style="border:1px solid var(--border); border-radius:99px; padding:.05rem .6rem; font-weight:600;">
-          {badge[p.data.format]}
-        </span>
-        <span>{langLabel[p.data.lang]}</span>
-        <span>{p.data.date.toISOString().slice(0, 10)}</span>
-      </div>
-      <Content />
+    <article class="post-card" dir={p.data.lang === 'ary' ? 'rtl' : 'ltr'}>
+      <p class="meta-mono" dir="ltr">
+        <span class="badge">{badge[p.data.format]}</span>
+        &nbsp;·&nbsp;<span class={`lang-chip ${p.data.lang === 'ary' ? 'ary' : ''}`}>{langLabel[p.data.lang]}</span>
+        &nbsp;·&nbsp;{p.data.date.toISOString().slice(0, 10)}
+      </p>
+      <div class={p.data.lang === 'ary' ? 'ary-text' : ''}><Content /></div>
     </article>
   ))}
 </Base>
+
+<style>
+  .intro { padding: 1rem 0 .4rem; }
+  .intro h1 { margin: 0 0 .6rem; }
+  .intro p { margin: 0 0 1rem; color: var(--muted); max-width: 38rem; }
+  .post-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 1.1rem 1.4rem; margin-bottom: 1.25rem;
+  }
+  .badge { font-weight: 600; color: var(--ink); }
+</style>

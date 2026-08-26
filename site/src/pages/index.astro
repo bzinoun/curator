@@ -5,23 +5,48 @@ import Base from '../layouts/Base.astro';
 const articles = (await getCollection('articles', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const base = import.meta.env.BASE_URL;
-const langLabel = { fr: 'FR', en: 'EN', ary: 'دارجة' };
+const langLabel = { fr: 'fr', en: 'en', ary: 'دارجة' };
 ---
 <Base title="curator — notes de terrain">
-  <h1>Articles</h1>
-  {articles.length === 0 && <p>Rien de publié pour l'instant — le pipeline chauffe.</p>}
-  <ul style="list-style:none; padding:0;">
+  <section class="hero rise">
+    <h1>Des notes de terrain,<br />pas des tutoriels.</h1>
+    <p>
+      Tout ce qui est publié ici sort de vraies sessions de travail — les incidents,
+      les chiffres, les décisions, et ce qu'on referait autrement. Une machine écoute,
+      distille et anonymise&nbsp;; un humain relit avant que ça parte.
+    </p>
+    <p class="langs">
+      Écrit en français, <span lang="en">in English</span>,
+      <span class="ary-text darija" lang="ar" dir="rtl">وبالدارجة</span>&nbsp;— selon ce que
+      l'idée demande. <a href={`${base}/articles/pourquoi-ce-site-existe/`}>Comment ça marche&nbsp;→</a>
+    </p>
+  </section>
+
+  <section aria-label="Articles">
     {articles.map((a) => (
-      <li style="margin-bottom:1.5rem;">
-        <a href={`${base}/articles/${a.id}/`} style="font-size:1.15rem; font-weight:600;">
-          {a.data.title}
-        </a>
-        <div style="color:var(--muted); font-size:.85rem;">
-          {a.data.date.toISOString().slice(0, 10)} · {langLabel[a.data.lang]}
-          {a.data.tags.map((t) => ` · ${t}`).join('')}
-        </div>
-        <p style="margin:.3rem 0 0;">{a.data.description}</p>
-      </li>
+      <article class="card">
+        <p class="meta-mono">
+          {a.data.date.toISOString().slice(0, 10)}
+          &nbsp;·&nbsp;<span class={`lang-chip ${a.data.lang === 'ary' ? 'ary' : ''}`}>{langLabel[a.data.lang]}</span>
+          {a.data.tags.slice(0, 2).map((t) => <span>&nbsp;·&nbsp;{t}</span>)}
+        </p>
+        <h2><a href={`${base}/articles/${a.id}/`}>{a.data.title}</a></h2>
+        <p class="desc">{a.data.description}</p>
+      </article>
     ))}
-  </ul>
+  </section>
 </Base>
+
+<style>
+  .hero { padding: 1.5rem 0 1rem; border-bottom: 1px solid var(--line); margin-bottom: 1rem; }
+  .hero h1 { margin: 0 0 .9rem; }
+  .hero p { margin: 0 0 .8rem; max-width: 38rem; }
+  .hero .langs { color: var(--muted); font-size: .97rem; }
+  .hero .darija { color: var(--saffron); font-size: 1.1em; }
+  .card { padding: 1.4rem 0 .4rem; }
+  .card + .card { border-top: 1px solid var(--line); }
+  .card h2 { margin: .35rem 0 .35rem; font-size: 1.35rem; font-weight: 700; }
+  .card h2 a { color: var(--ink); text-decoration: none; }
+  .card h2 a:hover { color: var(--majorelle); }
+  .card .desc { margin: 0; color: var(--muted); font-size: .97rem; max-width: 40rem; }
+</style>
