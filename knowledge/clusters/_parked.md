@@ -1,5 +1,3 @@
 # Nuggets en attente (matière pour cycles futurs)
-- 2026-08-26-archimate-rendering-from-python.md (density 4 — article solo potentiel "architecture-as-code")
-- 2026-08-26-search-query-neutralizing-indexes.md + 2026-08-26-index-discovery-by-measurement.md (cluster SQL perf legacy, 2 membres — attendre un 3e)
-- 2026-08-26-ai-design-tells-involuntary-pattern-signatures.md + 2026-08-26-wcag-contrast-ratio-small-text-trap-in-design-systems.md (cluster design-quality, 2 membres)
-- 2026-08-26-roadmap-ordered-by-reusability-not-scope.md (LinkedIn candidat)
+- 2026-08-26-archimate-rendering-from-python.md (density 4 — article solo potentiel "architecture-as-code", attendre un 2e nugget diagrammes/IaC)
+- 2026-08-26-wcag-contrast-ratio-small-text-trap-in-design-systems.md (cluster design-quality — l'autre membre, ai-design-tells, est parti en tweet ; attendre matière design-systems pour un article)

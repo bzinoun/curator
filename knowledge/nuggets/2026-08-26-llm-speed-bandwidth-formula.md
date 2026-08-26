@@ -7,7 +7,7 @@ density: 5
 tone: factual
 lang_hint: en
 tags: [llm-performance, inference, apple-silicon, model-selection]
-status: new
+status: drafted
 ---
 An LLM's inference speed isn't bounded by compute—it's bounded by **memory bandwidth**.
 

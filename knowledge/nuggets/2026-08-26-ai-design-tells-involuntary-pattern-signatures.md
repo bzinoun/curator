@@ -7,7 +7,7 @@ density: 4
 tone: factual
 lang_hint: en
 tags: [design-systems, ai-detection, visual-patterns]
-status: new
+status: drafted
 ---
 Visual design patterns like decorative side borders, colored bars above headings, and gradient text are emerging as involuntary "tells" that characterize AI-generated interface design. Audit frameworks (e.g., impeccable with 60+ detectors) now flag these patterns as signals of auto-generation.
 

@@ -7,7 +7,7 @@ density: 2.8
 tone: factual
 lang_hint: en
 tags: [product-strategy, architecture, scaling]
-status: new
+status: drafted
 ---
 A multi-domain roadmap became credible by ordering new branches by how much existing machinery they reuse, not by market size or engineering effort alone.
 

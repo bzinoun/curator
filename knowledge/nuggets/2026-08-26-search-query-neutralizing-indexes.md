@@ -7,7 +7,7 @@ density: 4
 tone: factual
 lang_hint: en
 tags: [sql-optimization, measurement, performance]
-status: new
+status: drafted
 ---
 A query using **LIKE '%q%'** with **a function on the column** (`UPPER(colname)`) defeats all indexes, even if they exist. The planner falls back to a full table scan applying predicates row-by-row.
 

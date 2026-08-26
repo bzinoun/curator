@@ -7,7 +7,7 @@ density: 4
 tone: factual
 lang_hint: en
 tags: [architecture-as-code, diagram-generation, draw.io]
-status: new
+status: parked
 ---
 **Rendering ArchiMate diagrams programmatically from Python to draw.io.**
 

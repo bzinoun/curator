@@ -7,7 +7,7 @@ density: 3
 tone: factual
 lang_hint: en
 tags: [apple-silicon, memory, gpu, local-inference]
-status: new
+status: drafted
 ---
 On Apple Silicon Macs, the real VRAM ceiling is **~24–28 GB** (not the full 32 GB), and it's a hard stop.
 

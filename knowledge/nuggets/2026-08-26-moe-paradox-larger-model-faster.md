@@ -7,7 +7,7 @@ density: 4
 tone: opinionated
 lang_hint: en
 tags: [moe, model-architecture, model-selection, performance]
-status: new
+status: drafted
 ---
 Counterintuitive: a **larger** open-weight LLM runs faster than a smaller one on the same hardware.
 

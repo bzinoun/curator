@@ -7,7 +7,7 @@ density: 3
 tone: factual
 lang_hint: en
 tags: [database, observability, methodology]
-status: new
+status: drafted
 ---
 Don't assume indexes are "present and working"—**measure the plan**. A column used in filtering but carrying no dedicated index can hide under a primary-key index that's used only for sort, neutralizing its filtering power.
 
