@@ -2,7 +2,7 @@
 title: "Your discovery pipeline is reasoning backwards"
 format: linkedin
 lang: en
-status: draft
+status: published
 date: 2026-08-26
 nuggets:
   - 2026-08-26-inference-direction-in-discovery.md

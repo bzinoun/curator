@@ -2,7 +2,7 @@
 title: "Status open (darija)"
 format: tweet
 lang: ary
-status: draft
+status: published
 date: 2026-08-26
 nuggets:
   - 2026-08-26-status-snapshot-vs-stream-stability.md

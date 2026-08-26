@@ -2,7 +2,7 @@
 title: "Vos titres sont des sujets, pas des conclusions"
 format: linkedin
 lang: fr
-status: draft
+status: published
 date: 2026-08-26
 nuggets:
   - 2026-08-26-executive-deck-title-conclusions.md
