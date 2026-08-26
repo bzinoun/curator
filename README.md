@@ -32,6 +32,7 @@ cd site && npm install      # site Astro
 |---|---|
 | `bin/harvest.py` | Draine la queue → nuggets (aussi lancé par le LaunchAgent) |
 | `bin/import_chats.py <export>` | Importe les chats claude.ai (export Settings → Privacy) dans la queue |
+| `bin/backfill.py [--dry-run]` | Enqueue les sessions passées de cette machine (voir INSTALL.md) |
 | `bin/curate.sh` ou `/curator curate` | Cluster + routage + rédaction des drafts |
 | `/curator publish <draft>` | Publie (article → site, post → published/) |
 | `/curator review` | Traite les nuggets à confidentialité douteuse |
@@ -40,18 +41,13 @@ cd site && npm install      # site Astro
 ## Plusieurs machines
 
 Le pipeline est git-based précisément pour ça : chaque machine capture ses propres
-sessions et pousse ses nuggets dans le même repo.
+sessions et pousse ses nuggets dans le même repo. Guide complet : **[INSTALL.md](INSTALL.md)**.
 
 ```bash
-# sur l'autre machine (ex. celle des sessions LLM locaux)
 git clone https://github.com/bzinoun/curator && cd curator
-bin/install-automation.sh        # hook SessionEnd + harvest quotidien locaux
+bin/install-automation.sh        # hook + harvest quotidien (macOS/Linux)
+bin/backfill.py --dry-run        # rattraper les sessions passées
 ```
-
-La queue (`data/queue/`) et les imports (`data/chat_imports/`) sont git-ignorés —
-état local par machine. Seuls les nuggets anonymisés convergent. Pour rattraper des
-sessions passées sur cette machine sans attendre le cron : remplir la queue à la
-main (voir `bin/enqueue.py`) puis `python3 bin/harvest.py`.
 
 ## Routage éditorial
 
