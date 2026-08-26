@@ -11,8 +11,19 @@
   Mermaid (flowchart, sequenceDiagram, C4), BPMN/ArchiMate via fichier
   `assets/diagrams/<slug>.drawio` + export SVG référencé dans le markdown,
   croquis, ou tableau comparatif. Un schéma décoratif ne compte pas.
-- **Ton** : pédagogique, précis, sans jargon gratuit ; les termes techniques restent
-  en anglais même dans un article en français.
+- **Ton — style narratif direct (inspiration Oussama Ammar)** :
+  - Ouvrir par une histoire vraie ou une affirmation contrariante — jamais par du contexte.
+  - Déconstruire une croyance commune ("tout le monde pense que… la vérité, c'est que…"),
+    puis reconstruire avec les faits vécus.
+  - Oralité maîtrisée : phrases courtes, rythme, répétitions volontaires, adresse
+    directe au lecteur. Pas de langue de rapport.
+  - Chaque section = une idée + une preuve vécue (chiffres réels) + une conséquence.
+  - Zoom out final : ce que l'incident dit du système en général — une réflexion,
+    pas un résumé.
+  - Les termes techniques restent en anglais même dans un article en français.
+- **Densité visuelle** : 2 à 4 schémas Mermaid minimum par article, qui PORTENT le
+  raisonnement (un schéma qu'on peut retirer sans perdre le fil ne compte pas).
+  Varier les types : flowchart, sequenceDiagram, quadrantChart, tableau comparatif.
 
 ## Post LinkedIn
 
@@ -29,8 +40,10 @@
 
 ## Tweet
 
-- **But** : format court, 1 tweet max (Premium : jusqu'à 4000 chars mais viser < 500).
-  Plus fun, décalé, style simple, décontracté et direct.
+- **But** : une **réflexion ou conclusion pertinente** — le lecteur doit repartir avec
+  une idée, pas juste un sourire. 1 tweet max (Premium : jusqu'à 4000 chars mais
+  viser < 500). Le ton reste simple, décontracté et direct ; le fun est un
+  assaisonnement, pas le plat.
 - **Langues** : les trois — c'est le format naturel de la Darija (lettres arabes).
 - **Structure** : la punchline d'abord. Autodérision et concret > leçon de morale.
 - **Accompagnement obligatoire** : image (brief dans `visual:`) ou lien article.

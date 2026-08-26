@@ -37,6 +37,22 @@ cd site && npm install      # site Astro
 | `/curator review` | Traite les nuggets à confidentialité douteuse |
 | `/curator status` | État du pipeline |
 
+## Plusieurs machines
+
+Le pipeline est git-based précisément pour ça : chaque machine capture ses propres
+sessions et pousse ses nuggets dans le même repo.
+
+```bash
+# sur l'autre machine (ex. celle des sessions LLM locaux)
+git clone https://github.com/bzinoun/curator && cd curator
+bin/install-automation.sh        # hook SessionEnd + harvest quotidien locaux
+```
+
+La queue (`data/queue/`) et les imports (`data/chat_imports/`) sont git-ignorés —
+état local par machine. Seuls les nuggets anonymisés convergent. Pour rattraper des
+sessions passées sur cette machine sans attendre le cron : remplir la queue à la
+main (voir `bin/enqueue.py`) puis `python3 bin/harvest.py`.
+
 ## Routage éditorial
 
 | Signal | Format |

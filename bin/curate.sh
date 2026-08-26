@@ -5,6 +5,7 @@ set -uo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$REPO"
 CLAUDE_BIN="$(jq -r .claude_bin config/curator.json)"
-"$CLAUDE_BIN" -p "/curator curate" \
+CURATE_MODEL="$(jq -r .curate_model config/curator.json)"
+"$CLAUDE_BIN" -p "/curator curate" --model "$CURATE_MODEL" \
   --allowedTools "Read,Glob,Grep,Write,Edit,Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(ls:*)" \
   2>&1 | tee -a data/logs/curate.log

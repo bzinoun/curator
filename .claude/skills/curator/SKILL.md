@@ -45,6 +45,10 @@ extraits) → `drafts/` (contenu rédigé) → `published/` + `site/src/content/
 4. **Choix de langue** (voir `references/formats.md` §Langues) : décider par contenu,
    pas par habitude. Citer un terme dans une autre langue que la principale est permis.
 5. **Rédaction** : écrire le draft selon les specs de `references/formats.md`.
+   **Les articles sont rédigés par Fable** : en session interactive, déléguer via
+   l'Agent tool (model: fable) avec les nuggets sources + le guide de style ; en
+   headless, `bin/curate.sh` tourne déjà sur `curate_model` (claude-fable-5).
+   LinkedIn/tweets peuvent rester sur le modèle courant.
    Nommage : `drafts/<type>/YYYY-MM-DD-<slug>.md`. Frontmatter obligatoire :
    `title, format, lang, status: draft, nuggets: [fichiers sources], visual: <spec>`.
 6. **Visuels** :

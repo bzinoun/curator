@@ -3,5 +3,6 @@
   "extract_model": "claude-haiku-4-5",
   "min_transcript_bytes": 20000,
   "max_convo_chars": 120000,
-  "site_base_url": "https://bzinoun.github.io/curator"
+  "site_base_url": "https://bzinoun.github.io/curator",
+  "curate_model": "claude-fable-5"
 }
