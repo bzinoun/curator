@@ -7,7 +7,7 @@ density: 3
 tone: factual
 lang_hint: en
 tags: [product-design, requirements-communication, stakeholder-management]
-status: new
+status: drafted
 ---
 **Use a capability journey map instead of backlog bullets to communicate product scope.**
 

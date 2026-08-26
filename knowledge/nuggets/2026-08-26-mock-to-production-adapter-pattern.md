@@ -7,7 +7,7 @@ density: 5
 tone: factual
 lang_hint: en
 tags: [architecture, testing, interfaces]
-status: new
+status: drafted
 ---
 Replace feature-flag-gated mock code with two **implementations behind a shared port**. One adapts the real database; another serves hardcoded data. Exactly one bean is active per domain, configured independently.
 

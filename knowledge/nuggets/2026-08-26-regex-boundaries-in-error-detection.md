@@ -7,7 +7,7 @@ density: 2
 tone: factual
 lang_hint: en
 tags: [reliability,error-handling,monitoring,api-integration]
-status: new
+status: drafted
 ---
 A missing word in an error-detection regex cost 8 days of pipeline downtime. The provider's message was *"You've hit your monthly spend limit"*; the pattern matched only *"usage limit | rate limit | limit reached | out of quota."* 
 

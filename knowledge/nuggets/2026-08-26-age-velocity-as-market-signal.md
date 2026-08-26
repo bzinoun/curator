@@ -7,7 +7,7 @@ density: 4
 tone: factual
 lang_hint: en
 tags: [product-discovery,marketplace-analytics,data-signals,app-stores]
-status: new
+status: drafted
 ---
 App store etagères reveal fundamentally different opportunities via a single, overlooked metric: **launch velocity** (reviews per year). Same median review count masks opposite realities:
 

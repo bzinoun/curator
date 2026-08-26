@@ -7,7 +7,7 @@ density: 4
 tone: opinionated
 lang_hint: en
 tags: [product-discovery,signal-quality,demand-estimation,methodology]
-status: new
+status: drafted
 ---
 Most app discovery pipelines infer backwards: *"users of this app want a watch version → there's a niche."* This produces false positives at scale.
 

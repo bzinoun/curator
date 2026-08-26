@@ -7,7 +7,7 @@ density: 3
 tone: opinionated
 lang_hint: en
 tags: [requirements, governance, conflict-resolution]
-status: new
+status: drafted
 ---
 When two official sources disagree—design mock vs. CR from two days ago—**don't guess which one holds**. Instead:
 

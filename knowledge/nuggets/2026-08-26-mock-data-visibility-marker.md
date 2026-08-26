@@ -7,7 +7,7 @@ density: 3
 tone: factual
 lang_hint: en
 tags: [ux, demo, data-integrity]
-status: new
+status: drafted
 ---
 When displaying mocked data alongside real data, don't concatenate a `(*)` to the string—carry a boolean `mocke: true` in the DTO and render the marker as a **visual-only annotation** in the UI layer.
 

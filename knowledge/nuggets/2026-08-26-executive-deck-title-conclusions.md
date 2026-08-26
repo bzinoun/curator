@@ -7,7 +7,7 @@ density: 4
 tone: opinionated
 lang_hint: en
 tags: [executive-communication, storytelling, deck-design]
-status: new
+status: drafted
 ---
 **Slide titles must be conclusions, not subject labels.**
 

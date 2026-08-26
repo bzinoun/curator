@@ -7,7 +7,7 @@ density: 3
 tone: opinionated
 lang_hint: en
 tags: [system-architecture,data-pipelines,product-operations,feedback-loops]
-status: new
+status: drafted
 ---
 Two scoring systems can measure complementary truths and still be worthless if unconnected. In production: one system measured niche viability by keyword shelf saturation (7 metrics, all measurable); another scored concept feasibility via LLM judgment (douleur, monétisation, risque conformité). Neither was wrong.
 

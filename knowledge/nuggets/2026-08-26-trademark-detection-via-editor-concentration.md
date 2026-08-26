@@ -7,7 +7,7 @@ density: 3
 tone: factual
 lang_hint: en
 tags: [legal-risk,app-review,marketplace-compliance,IP-detection]
-status: new
+status: drafted
 ---
 Trademark ownership can be inferred from App Store data alone, without consulting external registries. The pattern: **conjoined editor concentration + editor name matching the niche term**.
 

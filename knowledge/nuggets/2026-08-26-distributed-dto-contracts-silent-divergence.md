@@ -7,7 +7,7 @@ density: 3.5
 tone: factual
 lang_hint: en
 tags: [architecture, typescript, contract-testing, observability]
-status: new
+status: drafted
 ---
 A microservice bot and API exchanged a DTO `NegotiationContext` with fields `claimId`, `quittanceId`. The bot typed it locally; the API never exposed these fields. TypeScript compiled without error. At runtime both fields were `undefined`, silently skipping two branches of bot logic—no exception, no log, just silence.
 

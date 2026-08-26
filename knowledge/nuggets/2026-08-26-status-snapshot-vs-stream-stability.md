@@ -7,7 +7,7 @@ density: 3
 tone: factual
 lang_hint: en
 tags: [observability, integration-reliability, monitoring]
-status: new
+status: drafted
 ---
 A connection declared `status: open` for weeks was actually reconnecting 8 times daily and emitting 503 errors. A boolean status check at *now* revealed nothing; the true signal was reconnection frequency drift over time.
 
